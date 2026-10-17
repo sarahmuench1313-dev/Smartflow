@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FactoryFlow AI | Lakeshore Precision Manufacturing</title>
+<style>
+:root{--navy:#102638;--teal:#16877b;--blue:#4777b8;--purple:#8c6ac8;--bg:#f3f6f9;--ink:#182b3a;--muted:#647789;--line:#dce4eb;--white:#fff;--red:#bd4138}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,Segoe UI,Arial,sans-serif}
+header{background:var(--navy);color:#fff;padding:24px max(22px,calc((100% - 1180px)/2));}
+.brand{display:flex;gap:14px;align-items:center}.logo{width:48px;height:48px;border-radius:12px;background:var(--teal);display:grid;place-items:center;font-size:25px}
+h1,h2,h3,p{margin:0}h1{font-size:27px;letter-spacing:-.5px}header p{color:#c4d5e1;margin-top:3px}.business{margin-top:23px;font-size:21px;font-weight:700}.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.pill{font-size:12px;border:1px solid #506577;border-radius:99px;padding:4px 10px;color:#e4edf4}
+main{max-width:1180px;margin:26px auto;padding:0 18px 40px}.section-head{display:flex;justify-content:space-between;gap:12px;align-items:end;margin:26px 0 14px}h2{font-size:21px}h3{font-size:16px}.sub{font-size:13px;color:var(--muted);margin-top:4px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{background:var(--white);border:1px solid var(--line);border-radius:15px;padding:19px;box-shadow:0 2px 8px #18324708}.metric-label{font-size:13px;color:var(--muted)}.metric{font-size:28px;letter-spacing:-.7px;font-weight:750;margin:7px 0 2px}.hint{font-size:12px;color:var(--muted)}.teal{color:var(--teal)}.blue{color:var(--blue)}.purple{color:var(--purple)}.red{color:var(--red)}
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.card h3{margin-bottom:13px}.bars{display:flex;flex-direction:column;gap:15px}.barrow{display:grid;grid-template-columns:125px 1fr 82px;align-items:center;gap:10px;font-size:13px}.track{height:15px;background:#edf1f5;border-radius:99px;overflow:hidden}.fill{height:100%;border-radius:99px;background:var(--teal)}.fill.cost{background:var(--blue)}.fill.debt{background:var(--purple)}.fill.unexpected{background:#d49a37}
+.health-numbers{display:grid;grid-template-columns:1fr 1fr;gap:10px}.health-box{padding:13px;border-radius:11px;background:#f1f5f8}.health-box span{display:block;color:var(--muted);font-size:12px}.health-box strong{display:block;font-size:22px;margin-top:5px}.reservebar{height:12px;border-radius:99px;background:#e4eaf0;overflow:hidden;margin:15px 0 7px}.reservefill{height:100%;background:var(--teal);width:100%}.status{font-size:13px;padding:10px 12px;background:#e6f4ef;border-radius:10px;color:#21644f}.status.warn{background:#fbe9e7;color:#9b2e27}
+.controls{display:grid;grid-template-columns:1fr;gap:20px}.control label{display:flex;justify-content:space-between;gap:12px;font-weight:650;margin-bottom:8px}.control output{color:var(--blue);font-size:18px}input[type=range]{width:100%;accent-color:var(--teal);cursor:pointer}.range-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.results{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:18px}.result{background:#f1f5f8;border-radius:11px;padding:13px}.result span{display:block;color:var(--muted);font-size:12px}.result strong{font-size:21px;display:block;margin-top:4px;overflow-wrap:anywhere}
+.insight{border-left:4px solid var(--teal);padding:12px 14px;background:#f1f8f6;border-radius:0 10px 10px 0;margin-top:10px}.insight strong{display:block;margin-bottom:4px}.insight p{font-size:14px}.small{font-size:12px;color:var(--muted)}.overview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.overview strong{font-size:22px;display:block}.footer{margin-top:18px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:14px}
+@media(max-width:850px){.grid,.overview{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}.results{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.grid{grid-template-columns:1fr 1fr;gap:9px}.card{padding:14px}.metric{font-size:23px}.barrow{grid-template-columns:90px 1fr 68px;gap:7px}.results{grid-template-columns:1fr 1fr}.business{font-size:18px}h1{font-size:23px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand"><div class="logo">⚙</div><div><h1>FactoryFlow AI</h1><p>Manufacturing financial intelligence</p></div></div>
+ <div class="business">Lakeshore Precision Manufacturing, LLC</div>
+ <p>Industrial components manufacturing · 45 employees</p>
+ <div class="meta"><span class="pill">FICTIONAL DEMO DATA</span><span class="pill">Monthly financial view</span><span class="pill">Interactive scenario planner</span></div>
+</header>
+<main>
+ <div class="section-head"><div><h2>Financial dashboard</h2><p class="sub">Baseline figures update when you adjust the what-if scenario.</p></div><span class="small">Currency: USD</span></div>
+ <section class="grid">
+  <div class="card"><div class="metric-label">Monthly revenue</div><div class="metric teal" id="revenueCard">$250,000</div><div class="hint" id="revenueHint">Baseline customer receipts</div></div>
+  <div class="card"><div class="metric-label">Operating costs</div><div class="metric blue" id="opsCard">$200,000</div><div class="hint">Before debt and unexpected expenses</div></div>
+  <div class="card"><div class="metric-label">Debt payments</div><div class="metric purple">$15,000</div><div class="hint">6.0% of baseline cash receipts</div></div>
+  <div class="card"><div class="metric-label">Starting available cash</div><div class="metric">$90,000</div><div class="hint">Minimum desired reserve: $60,000</div></div>
+ </section>
+ <div class="section-head"><div><h2>Cash flow & financial health</h2><p class="sub">Projected values are based on the selected monthly scenario.</p></div></div>
+ <section class="two">
+  <div class="card"><h3>Revenue vs. costs</h3><div class="bars">
+   <div class="barrow"><span>Revenue</span><div class="track"><div class="fill" id="revBar" style="width:100%"></div></div><strong id="revBarLabel">$250,000</strong></div>
+   <div class="barrow"><span>Operating costs</span><div class="track"><div class="fill cost" id="opsBar" style="width:80%"></div></div><strong id="opsBarLabel">$200,000</strong></div>
+   <div class="barrow"><span>Debt payments</span><div class="track"><div class="fill debt" id="debtBar" style="width:6%"></div></div><strong>$15,000</strong></div>
+   <div class="barrow"><span>Unexpected</span><div class="track"><div class="fill unexpected" id="unexpectedBar" style="width:0%"></div></div><strong id="unexpectedLabel">$0</strong></div>
+  </div><p class="small" style="margin-top:17px">Bar lengths use revenue as the 100% reference.</p></div>
+  <div class="card"><h3>Financial health</h3><div class="health-numbers">
+   <div class="health-box"><span>Projected ending cash</span><strong id="endingCash">$125,000</strong></div>
+   <div class="health-box"><span>Minimum cash reserve</span><strong>$60,000</strong></div>
+   <div class="health-box"><span>Cash above reserve</span><strong id="reserveBuffer" class="teal">$65,000</strong></div>
+   <div class="health-box"><span>Monthly net cash flow</span><strong id="netHealth" class="teal">$35,000</strong></div>
+  </div><div class="reservebar"><div class="reservefill" id="reserveFill"></div></div><p class="small" id="reserveCaption">Projected cash is above the minimum reserve target.</p><div id="healthStatus" class="status" style="margin-top:12px">Reserve target maintained.</div></div>
+ </section>
+ <div class="section-head"><div><h2>What-if simulator</h2><p class="sub">Move a slider to instantly recalculate the financial forecast.</p></div><button id="resetBtn" style="border:1px solid #cbd5df;background:white;border-radius:9px;padding:8px 13px;cursor:pointer">Reset scenario</button></div>
+ <section class="card">
+  <div class="controls">
+   <div class="control"><label for="revenueDrop">Revenue reduction <output id="revenueDropOut">0%</output></label><input id="revenueDrop" type="range" min="0" max="30" step="1" value="0"><div class="range-labels"><span>0%</span><span>15%</span><span>30%</span></div><p class="small">Assumes customer receipts decline with revenue; other costs remain unchanged except for the material-cost adjustment.</p></div>
+   <div class="control"><label for="materialIncrease">Raw-material cost increase <output id="materialIncreaseOut">0%</output></label><input id="materialIncrease" type="range" min="0" max="40" step="1" value="0"><div class="range-labels"><span>0%</span><span>20%</span><span>40%</span></div><p class="small">Applied to baseline raw-material costs of $85,000 per month.</p></div>
+   <div class="control"><label for="unexpected">Unexpected expenses <output id="unexpectedOut">$0</output></label><input id="unexpected" type="range" min="0" max="40000" step="1000" value="0"><div class="range-labels"><span>$0</span><span>$20,000</span><span>$40,000</span></div><p class="small">Additional cash outflow on top of regular operating costs and debt payments.</p></div>
+  </div>
+  <div class="results">
+   <div class="result"><span>Scenario net cash flow</span><strong id="netResult" class="teal">$35,000</strong></div>
+   <div class="result"><span>Projected ending cash</span><strong id="endingResult">$125,000</strong></div>
+   <div class="result"><span>Total cash payments</span><strong id="paymentsResult">$215,000</strong></div>
+   <div class="result"><span>Reserve buffer</span><strong id="bufferResult" class="teal">$65,000</strong></div>
+  </div>
+ </section>
+ <div class="section-head"><div><h2>AI financial insights</h2><p class="sub">Scenario-based explanation and suggested management actions.</p></div></div>
+ <section class="card">
+  <div id="insightSummary" class="insight"><strong>Baseline outlook</strong><p>The business generates $35,000 in monthly net cash flow. Projected ending cash is $125,000, which is $65,000 above the desired minimum reserve.</p></div>
+  <div id="insightDetails" class="insight"><strong>Suggested actions</strong><p>Maintain the cash reserve, monitor supplier pricing and material yield, and review upcoming obligations before allocating surplus cash.</p></div>
+  <p class="small" style="margin-top:12px">Hackathon demo note: this is a transparent, rule-based explanation panel, not a live AI service or professional financial advice.</p>
+ </section>
+ <div class="section-head"><div><h2>Break-even analyzer</h2><p class="sub">Maximum raw-material inflation before monthly net cash flow reaches zero.</p></div></div>
+ <section class="card">
+  <div class="health-numbers">
+   <div class="health-box"><span>Break-even material increase</span><strong id="breakEven" class="teal">41.2%</strong></div>
+   <div class="health-box"><span>Current material increase</span><strong id="currentMaterial">0%</strong></div>
+  </div>
+  <div class="reservebar"><div id="breakEvenFill" class="reservefill" style="width:0%"></div></div>
+  <p id="breakEvenText">At baseline, raw-material costs can rise approximately 41.2% before monthly net cash flow reaches zero, assuming all other inputs remain unchanged.</p>
+ </section>
+ <div class="section-head"><div><h2>Business overview</h2><p class="sub">Additional supplied demo figures.</p></div></div>
+ <section class="card overview">
+  <div><span class="metric-label">Outstanding business loans</span><strong>$425,000</strong></div>
+  <div><span class="metric-label">Equipment and other assets</span><strong>$650,000</strong></div>
+  <div><span class="metric-label">Annualized revenue run rate</span><strong>$3.0M</strong></div>
+  <div><span class="metric-label">Annualized baseline net cash flow</span><strong>$420,000</strong></div>
+ </section>
+ <div class="footer"><strong>Demo assumptions:</strong> Monthly customer receipts equal revenue; operating costs comprise $12,000 facility/utilities, $78,000 payroll/benefits, $85,000 raw materials, and $25,000 maintenance/insurance/logistics. Net cash flow = revenue − operating costs − $15,000 debt payments − unexpected expenses. Ending cash = $90,000 starting reserves + net cash flow. Taxes, receivables timing, inventory timing and other unlisted cash flows are excluded. Annualized values are simple monthly run rates, not forecasts.</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const fmt=n=>(n<0?'−':'')+'$'+Math.round(Math.abs(n)).toLocaleString('en-US');
+const pct=n=>n.toFixed(1)+'%';
+function update(){
+ const rd=+$('revenueDrop').value, mi=+$('materialIncrease').value, un=+$('unexpected').value;
+ const rev=250000*(1-rd/100), ops=12000+78000+85000*(1+mi/100)+25000;
+ const payments=ops+15000+un, net=rev-payments, ending=90000+net, buffer=ending-60000;
+ const be=((rev-12000-78000-25000-15000-un)/85000)*100;
+ $('revenueDropOut').textContent=rd+'%';$('materialIncreaseOut').textContent=mi+'%';$('unexpectedOut').textContent=fmt(un);
+ $('revenueCard').textContent=fmt(rev);$('revenueHint').textContent=rd?rd+'% below baseline':'Baseline customer receipts';
+ $('opsCard').textContent=fmt(ops);$('revBarLabel').textContent=fmt(rev);$('opsBarLabel').textContent=fmt(ops);$('unexpectedLabel').textContent=fmt(un);
+ $('revBar').style.width=Math.max(0,rev/250000*100)+'%';$('opsBar').style.width=Math.min(100,ops/250000*100)+'%';$('debtBar').style.width=6+'%';$('unexpectedBar').style.width=Math.min(100,un/250000*100)+'%';
+ $('endingCash').textContent=fmt(ending);$('reserveBuffer').textContent=fmt(buffer);$('netHealth').textContent=fmt(net);$('netHealth').className=net>=0?'teal':'red';
+ $('reserveBuffer').className=buffer>=0?'teal':'red';$('reserveFill').style.width=Math.max(0,Math.min(100,ending/120000*100))+'%';
+ $('reserveCaption').textContent=buffer>=0?'Projected cash is above the minimum reserve target.':'Projected cash is below the minimum reserve target.';
+ $('healthStatus').textContent=buffer>=0?'Reserve target maintained.': 'Warning: projected cash falls below the desired reserve.';
+ $('healthStatus').className='status'+(buffer<0?' warn':'');
+ $('netResult').textContent=fmt(net);$('netResult').className=net>=0?'teal':'red';$('endingResult').textContent=fmt(ending);$('paymentsResult').textContent=fmt(payments);$('bufferResult').textContent=fmt(buffer);$('bufferResult').className=buffer>=0?'teal':'red';
+ $('currentMaterial').textContent=mi+'%';$('breakEven').textContent=pct(be);$('breakEven').className=be>=0?'teal':'red';$('breakEvenFill').style.width=Math.max(0,Math.min(100,be/40*100))+'%';$('breakEvenFill').style.background=be<0?'var(--red)':'var(--teal)';
+ $('breakEvenText').textContent=be<0?'The current scenario is already below break-even before further material inflation. Revenue improvement, cost reductions, or both are needed to restore positive monthly cash flow.':be>40?'Break-even is beyond the simulator’s 40% material-inflation range; the model stays positive across the available range, with other assumptions held constant.':'At the current revenue and expense assumptions, raw-material costs can increase approximately '+pct(be)+' from the original $85,000 baseline before monthly net cash flow reaches zero.';
+ const delta=net-35000;
+ $('insightSummary').innerHTML='<strong>'+(net<0?'Cash-flow deficit':buffer<0?'Reserve risk':(rd===0&&mi===0&&un===0?'Baseline outlook':'Scenario outlook'))+'</strong><p>Monthly revenue is '+fmt(rev)+', operating costs are '+fmt(ops)+', and total cash payments including debt and unexpected expenses are '+fmt(payments)+'. Net cash flow is '+fmt(net)+' ('+(delta>0?'+':'')+fmt(delta)+' versus baseline). Projected ending cash is '+fmt(ending)+', '+fmt(Math.abs(buffer))+' '+(buffer>=0?'above':'below')+' the desired reserve.</p>';
+ let actions=[];
+ if(net<0)actions.push('Protect liquidity: review discretionary spending, accelerate appropriate collections, negotiate supplier terms, and map upcoming obligations before committing reserve cash.');
+ else if(buffer<0)actions.push('Restore the reserve buffer: review payroll timing, supplier payments, and nonessential purchases before allocating cash elsewhere.');
+ else actions.push('Preserve the surplus: maintain the $60,000 minimum reserve and review upcoming obligations before allocating excess cash.');
+ if(mi>=15)actions.push('Seek updated supplier quotes and examine material yield, scrap, and alternative sourcing.');
+ if(rd>=10)actions.push('Review the sales pipeline, customer concentration, backlog, and production schedule.');
+ if(un>0)actions.push('Determine whether the unexpected expense is one-time or recurring and revise the near-term cash plan.');
+ if(!rd&&!mi&&!un)actions.push('Monitor supplier pricing, material yield, and customer collections.');
+ $('insightDetails').innerHTML='<strong>Suggested management actions</strong><p>'+actions.join(' ')+'</p>';
+}
+['revenueDrop','materialIncrease','unexpected'].forEach(id=>$(id).addEventListener('input',update));
+$('resetBtn').addEventListener('click',()=>{$('revenueDrop').value=0;$('materialIncrease').value=0;$('unexpected').value=0;update()});
+update();
+</script>
+</body></html>
