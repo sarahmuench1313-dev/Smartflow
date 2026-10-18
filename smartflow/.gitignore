@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+build/
+next-env.d.ts
+*.tsbuildinfo
+
+# environment variables (API keys go here — never commit them)
+.env
+.env*.local
+
+# misc
+.DS_Store
+Thumbs.db
+npm-debug.log*
+.vercel
